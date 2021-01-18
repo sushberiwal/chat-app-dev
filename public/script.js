@@ -2,16 +2,17 @@ let sendButton = document.querySelector("#send-chat");
 let chatMessage = document.querySelector("#chat-message");
 let chatList = document.querySelector(".chat-list");
 
-
-
 let username = prompt("Enter Your Name !!");
 console.log(username);
-
 if(username){
     socket.emit("join" , username);
 }
 
-
+chatMessage.addEventListener("keyup" , function(e){
+    if(e.keyCode == 13){
+        sendButton.click();
+    }
+})
 
 sendButton.addEventListener("click" , function(){
     let message = chatMessage.value;

@@ -7,7 +7,6 @@ socket.on("chat-left" , function(messageObj){
     chatList.append(chat);
 })
 
-
 socket.on("chat-join" , function(username){
     let chat= document.createElement("div");
     chat.classList.add("join");
